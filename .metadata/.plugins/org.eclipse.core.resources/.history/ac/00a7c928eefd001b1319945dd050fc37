@@ -52,17 +52,17 @@ public class SwingTest {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 879, 507);
+		frame.setBounds(100, 100, 1059, 522);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Book Shop");
-		lblNewLabel.setBounds(328, 29, 232, 49);
+		lblNewLabel.setBounds(458, 30, 232, 49);
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 30));
 		frame.getContentPane().add(lblNewLabel);
 		
 		JPanel panel = new JPanel();
-		panel.setBounds(43, 97, 343, 151);
+		panel.setBounds(45, 112, 343, 151);
 		panel.setBorder(new TitledBorder(null, "Registation", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
@@ -98,11 +98,11 @@ public class SwingTest {
 		panel.add(textField_1);
 		
 		JButton btnNewButton = new JButton("Save");
-		btnNewButton.setBounds(53, 269, 89, 43);
+		btnNewButton.setBounds(56, 281, 89, 43);
 		frame.getContentPane().add(btnNewButton);
 		
 		JButton btnExit = new JButton("Exit");
-		btnExit.setBounds(163, 269, 89, 43);
+		btnExit.setBounds(170, 281, 89, 43);
 		frame.getContentPane().add(btnExit);
 		
 		JButton btnClear = new JButton("Clear");
@@ -110,7 +110,7 @@ public class SwingTest {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnClear.setBounds(276, 269, 89, 43);
+		btnClear.setBounds(285, 281, 89, 43);
 		frame.getContentPane().add(btnClear);
 		
 		table = new JTable();
@@ -118,7 +118,7 @@ public class SwingTest {
 		frame.getContentPane().add(table);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(421, 99, 404, 213);
+		scrollPane.setBounds(420, 111, 584, 213);
 		frame.getContentPane().add(scrollPane);
 		
 		table_1 = new JTable();
@@ -126,7 +126,7 @@ public class SwingTest {
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBorder(new TitledBorder(null, "Search", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		panel_1.setBounds(48, 340, 303, 97);
+		panel_1.setBounds(48, 357, 303, 97);
 		frame.getContentPane().add(panel_1);
 		panel_1.setLayout(null);
 		
@@ -141,11 +141,11 @@ public class SwingTest {
 		panel_1.add(textField_2);
 		
 		JButton btnUpdate = new JButton("Update\r\n");
-		btnUpdate.setBounds(481, 355, 89, 43);
+		btnUpdate.setBounds(549, 384, 89, 43);
 		frame.getContentPane().add(btnUpdate);
 		
 		JButton btnDelete = new JButton("Delete");
-		btnDelete.setBounds(621, 355, 89, 43);
+		btnDelete.setBounds(712, 384, 89, 43);
 		frame.getContentPane().add(btnDelete);
 	}
 }
