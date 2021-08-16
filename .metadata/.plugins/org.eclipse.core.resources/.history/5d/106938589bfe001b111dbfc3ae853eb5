@@ -10,9 +10,6 @@ import javax.swing.JOptionPane;
 import java.awt.Font;
 import javax.swing.JPanel;
 import javax.swing.border.TitledBorder;
-
-import net.proteanit.sql.DbUtils;
-
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JTable;
@@ -51,12 +48,11 @@ public class SwingTest {
 	public SwingTest() {
 		initialize();
 		connect();
-		table_load();
 	}
 	
 	Connection con;
 	PreparedStatement pst;
-	ResultSet rs;
+	
 	
 	
 
@@ -82,7 +78,7 @@ public class SwingTest {
 		  {
 			pst = con.prepareStatement("select * from book");
 			rs = pst.executeQuery();
-			table.setModel(DbUtils.resultSetToTableModel (rs));
+			table_1.setModel(DbUtils.resultSetToTableModel (rs));
 		  }
 		 catch (SQLException e)
 		       {

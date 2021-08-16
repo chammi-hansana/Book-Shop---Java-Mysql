@@ -5,14 +5,9 @@ import java.sql.*;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-
 import java.awt.Font;
 import javax.swing.JPanel;
 import javax.swing.border.TitledBorder;
-
-import net.proteanit.sql.DbUtils;
-
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JTable;
@@ -23,11 +18,11 @@ public class SwingTest {
 
 	private JFrame frame;
 	private JTextField txtbname;
-	private JTextField txtedition;
-	private JTextField txtprice;
+	private JTextField textField;
+	private JTextField textField_1;
 	private JTable table;
 	private JTable table_1;
-	private JTextField txtbid;
+	private JTextField textField_2;
 
 	/**
 	 * Launch the application.
@@ -50,49 +45,8 @@ public class SwingTest {
 	 */
 	public SwingTest() {
 		initialize();
-		connect();
-		table_load();
 	}
-	
-	Connection con;
-	PreparedStatement pst;
-	ResultSet rs;
-	
-	
 
-	public void connect()
-	{
-		try {
-			Class.forName("com.mysql.jdbc.Drive");
-			con = DriverManager.getConnection("jdbc:mysql://localhost/JavaCrud", "root", "");
-					}
-		catch (ClassNotFoundException ex)
-		{
-			
-		}
-		catch (SQLException ex)
-		{
-			
-		}
-	}
-	
-	public void table_load()
-	{
-		       try
-		  {
-			pst = con.prepareStatement("select * from book");
-			rs = pst.executeQuery();
-			table.setModel(DbUtils.resultSetToTableModel (rs));
-		  }
-		 catch (SQLException e)
-		       {
-			      e.printStackTrace();
-			      
-		       }
-	}
-	
-	
-	
 	/**
 	 * Initialize the contents of the frame.
 	 */
@@ -133,49 +87,17 @@ public class SwingTest {
 		panel.add(txtbname);
 		txtbname.setColumns(10);
 		
-		txtedition = new JTextField();
-		txtedition.setColumns(10);
-		txtedition.setBounds(130, 69, 187, 20);
-		panel.add(txtedition);
+		textField = new JTextField();
+		textField.setColumns(10);
+		textField.setBounds(130, 69, 187, 20);
+		panel.add(textField);
 		
-		txtprice = new JTextField();
-		txtprice.setColumns(10);
-		txtprice.setBounds(130, 104, 187, 20);
-		panel.add(txtprice);
+		textField_1 = new JTextField();
+		textField_1.setColumns(10);
+		textField_1.setBounds(130, 104, 187, 20);
+		panel.add(textField_1);
 		
 		JButton btnNewButton = new JButton("Save");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-				String bname,edition,price;
-				
-				
-				bname = txtbname.getText();
-				edition = txtedition.getText();
-				price = txtprice.getText();
-				
-				  try {
-					  pst = con.prepareStatement("insert into book(name,edition,price)values(?,?,?)");
-					  pst.setString(1, bname);
-					  pst.setString(2, edition);
-					  pst.setString(3, price);
-					  pst.executeUpdate();
-					  JOptionPane.showMessageDialog(null, "Record Addedddd!!!!!");
-					  //table_load();
-					  txtbname.setText("");
-					  txtedition.setText("");
-					  txtprice.setText("");
-					  txtbname.requestFocus();
-					 
-					}
-				  
-				  catch (SQLException el) {
-					  el.printStackTrace();
-				  }
-				
-				
-			}
-		});
 		btnNewButton.setBounds(53, 269, 89, 43);
 		frame.getContentPane().add(btnNewButton);
 		
@@ -213,10 +135,10 @@ public class SwingTest {
 		lblNewLabel_1_1_2.setFont(new Font("Tahoma", Font.BOLD, 14));
 		panel_1.add(lblNewLabel_1_1_2);
 		
-		txtbid = new JTextField();
-		txtbid.setBounds(126, 32, 118, 28);
-		txtbid.setColumns(10);
-		panel_1.add(txtbid);
+		textField_2 = new JTextField();
+		textField_2.setBounds(126, 32, 118, 28);
+		textField_2.setColumns(10);
+		panel_1.add(textField_2);
 		
 		JButton btnUpdate = new JButton("Update\r\n");
 		btnUpdate.setBounds(481, 355, 89, 43);
