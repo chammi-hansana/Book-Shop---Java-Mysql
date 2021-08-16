@@ -1,7 +1,6 @@
 package swing;
 
 import java.awt.EventQueue;
-import java.sql.*;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -14,6 +13,7 @@ import javax.swing.JTable;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JScrollPane;
+
 public class SwingTest {
 
 	private JFrame frame;
